@@ -27,10 +27,19 @@ export class Rocket {
         }
     }
     addCargo(cargo: Cargo): boolean {
-        if (this.canAdd() === true) {
-            let total: number = 0;
-            cargo.push(this.cargoItems)
+        if (this.canAdd(cargo)) {
+            this.cargoItems.push(cargo);
             return true;
+        } else {
+            return false;
+        }
+    }
+    addAstronaut(astronaut: Astronaut): boolean {
+        if (this.canAdd(astronaut)) {
+            this.astronauts.push(astronaut);
+            return true;
+        } else {
+            return false;
         }
     }
 }
